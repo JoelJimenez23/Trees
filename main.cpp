@@ -34,6 +34,7 @@ int main(){
     bstree->clear();
     int array[] = {1,5,7,8,9,11,12,13,15,18,20,22,25,26};
     bstree->buildFromOrderedArray(array, 14);    
-    std::cout<<"is balanced? "<<std::boolalpha<<bstree->isBalanced()<<std::endl;
+    bstree->display();
+    std::cout<<"\nis balanced? "<<std::boolalpha<<bstree->isBalanced()<<std::endl;
     return 0;
 }

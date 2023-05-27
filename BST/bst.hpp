@@ -75,7 +75,7 @@ public:
         root = nullptr;
     }
     void buildFromOrderedArray(T* array, int n){
-        buildFromOrderedArray(array,0,n);
+        buildFromOrderedArray(array,0,n-1);
     }
     void display(){
         if(root != nullptr){
@@ -239,15 +239,13 @@ private:
             return false;
         }
     }
-    void buildFromOrderedArray(T* array,int start,int end){
+    void buildFromOrderedArray(T*& array,int start,int end){
         if(start > end){
             return;
         }
-        else{
-            T middle =  array[(end + start)/ 2];
-            insert(middle);
-            buildFromOrderedArray(array,start,middle-1);
-            buildFromOrderedArray(array,middle + 1,end);
-        }
+        int middle =  (end + start)/ 2;
+        insert(array[middle]);
+        buildFromOrderedArray(array,start,middle-1);
+        buildFromOrderedArray(array,middle + 1,end);
     }
 };
