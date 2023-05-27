@@ -190,8 +190,24 @@ CMakeFiles/main.dir/main.cpp.o: /home/joel/Programacion/C++/Trees/main.cpp \
   /usr/include/c++/12/bits/basic_ios.tcc \
   /usr/include/c++/12/bits/ostream.tcc \
   /usr/include/c++/12/istream \
-  /usr/include/c++/12/bits/istream.tcc
+  /usr/include/c++/12/bits/istream.tcc \
+  /home/joel/Programacion/C++/Trees/BST/bst.hpp \
+  /usr/include/c++/12/cstddef \
+  /home/joel/Programacion/C++/Trees/BST/node.hpp \
+  /usr/include/c++/12/stack \
+  /usr/include/c++/12/deque \
+  /usr/include/c++/12/bits/stl_uninitialized.h \
+  /usr/include/c++/12/bits/stl_deque.h \
+  /usr/include/c++/12/bits/deque.tcc \
+  /usr/include/c++/12/bits/stl_stack.h \
+  /usr/include/c++/12/bits/uses_allocator.h
 
+
+/usr/include/c++/12/bits/stl_uninitialized.h:
+
+/usr/include/c++/12/stack:
+
+/home/joel/Programacion/C++/Trees/BST/bst.hpp:
 
 /usr/include/c++/12/bits/basic_ios.tcc:
 
@@ -248,6 +264,8 @@ CMakeFiles/main.dir/main.cpp.o: /home/joel/Programacion/C++/Trees/main.cpp \
 /usr/include/x86_64-linux-gnu/bits/byteswap.h:
 
 /usr/include/c++/12/cstdlib:
+
+/usr/include/c++/12/bits/stl_deque.h:
 
 /usr/include/c++/12/ext/string_conversions.h:
 
@@ -315,6 +333,8 @@ CMakeFiles/main.dir/main.cpp.o: /home/joel/Programacion/C++/Trees/main.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h:
 
+/usr/include/c++/12/deque:
+
 /home/joel/Programacion/C++/Trees/main.cpp:
 
 /usr/include/c++/12/bits/ptr_traits.h:
@@ -379,6 +399,8 @@ CMakeFiles/main.dir/main.cpp.o: /home/joel/Programacion/C++/Trees/main.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h:
 
+/usr/include/c++/12/bits/uses_allocator.h:
+
 /usr/include/c++/12/bits/stl_iterator_base_funcs.h:
 
 /usr/include/c++/12/bits/move.h:
@@ -396,6 +418,8 @@ CMakeFiles/main.dir/main.cpp.o: /home/joel/Programacion/C++/Trees/main.cpp \
 /usr/lib/gcc/x86_64-linux-gnu/12/include/stdarg.h:
 
 /usr/include/pthread.h:
+
+/home/joel/Programacion/C++/Trees/BST/node.hpp:
 
 /usr/include/x86_64-linux-gnu/c++/12/bits/ctype_base.h:
 
@@ -557,6 +581,10 @@ CMakeFiles/main.dir/main.cpp.o: /home/joel/Programacion/C++/Trees/main.cpp \
 
 /usr/include/c++/12/bits/cpp_type_traits.h:
 
+/usr/include/c++/12/bits/deque.tcc:
+
+/usr/include/c++/12/cstddef:
+
 /usr/include/c++/12/concepts:
 
 /usr/include/c++/12/bits/new_allocator.h:
@@ -568,6 +596,8 @@ CMakeFiles/main.dir/main.cpp.o: /home/joel/Programacion/C++/Trees/main.cpp \
 /usr/include/c++/12/bits/functexcept.h:
 
 /usr/include/c++/12/bits/stl_function.h:
+
+/usr/include/c++/12/bits/stl_stack.h:
 
 /usr/include/c++/12/pstl/pstl_config.h:
 
