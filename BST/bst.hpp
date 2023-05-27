@@ -44,13 +44,39 @@ public:
         }
         throw std::invalid_argument("root is not initialized, remove error\n");
     }
-    bool isBalanced();
+    bool isBalanced(){
+        if(root){
+            return isBalanced(root);
+        }
+        return false;
+    }
     int size();
-    bool isFull();
-    T successor(T value);
-    T predecessor(T value);
-    void clear();
-    void buildFromOrderedArray();
+    bool isFull(){
+        return isFull(root);
+    }
+    T successor(T value){
+        if(root){
+            return successor(root,value)->data;
+        }
+        else{
+            throw std::invalid_argument("root not initialzed\n");
+        }
+    }
+    T predecessor(T value){
+        if(root){
+            return predecessor(root,value)->data;
+        }
+        else{
+            throw std::invalid_argument("root not initialized\n");
+        }
+    }
+    void clear(){
+        if(root){this->root->killself();}
+        root = nullptr;
+    }
+    void buildFromOrderedArray(T* array, int n){
+        buildFromOrderedArray(array,0,n);
+    }
     void display(){
         if(root != nullptr){
             display(root);
@@ -179,19 +205,49 @@ private:
             }
         }  
         if(nodo == nullptr){return nullptr;}
-        else if(nodo->left != nullptr){
+        if(nodo->left != nullptr){
             nodo = nodo->left;
             while(nodo->right != nullptr){
                 nodo = nodo->right;
             }
-            return nodo;
         }
         else{
             while(nodo->data < nodos.top()->data){
                 nodos.pop();
             }
-            return nodo;
-        }     
+            nodo = nodos.top();
+        }
+        return nodo;
     }
+    bool isBalanced(NodeBT<T>* node){     
+        if(node == nullptr){return true;}
+        int left = height(node->left);
+        int right = height(node->right);
+        int difference = std::abs(left - right);
+        if(difference > 1){return false;}
 
+        return isBalanced(node->left) && isBalanced(node->right);
+    }
+    bool isFull(NodeBT<T>* nodo){
+        if(nodo == nullptr){
+            return true;
+        }
+        else if(nodo->left != nullptr && nodo->right !=nullptr){
+            return isFull(nodo->left) && isFull(nodo->right);
+        }
+        else{
+            return false;
+        }
+    }
+    void buildFromOrderedArray(T* array,int start,int end){
+        if(start > end){
+            return;
+        }
+        else{
+            T middle =  array[(end + start)/ 2];
+            insert(middle);
+            buildFromOrderedArray(array,start,middle-1);
+            buildFromOrderedArray(array,middle + 1,end);
+        }
+    }
 };

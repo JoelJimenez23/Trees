@@ -20,8 +20,6 @@ CMakeFiles/main.dir/main.cpp.o: /home/joel/Programacion/C++/Trees/main.cpp \
   /usr/include/c++/12/ext/numeric_traits.h \
   /usr/include/c++/12/bits/cpp_type_traits.h \
   /usr/include/c++/12/ext/type_traits.h \
-  /usr/include/c++/12/iostream \
-  /usr/include/c++/12/ostream \
   /usr/include/c++/12/ios \
   /usr/include/c++/12/iosfwd \
   /usr/include/c++/12/bits/stringfwd.h \
@@ -189,6 +187,8 @@ CMakeFiles/main.dir/main.cpp.o: /home/joel/Programacion/C++/Trees/main.cpp \
   /usr/include/x86_64-linux-gnu/c++/12/bits/ctype_inline.h \
   /usr/include/c++/12/bits/locale_facets.tcc \
   /usr/include/c++/12/bits/basic_ios.tcc \
+  /usr/include/c++/12/iostream \
+  /usr/include/c++/12/ostream \
   /usr/include/c++/12/bits/ostream.tcc \
   /usr/include/c++/12/istream \
   /usr/include/c++/12/bits/istream.tcc \
@@ -209,6 +209,8 @@ CMakeFiles/main.dir/main.cpp.o: /home/joel/Programacion/C++/Trees/main.cpp \
 /usr/include/c++/12/stack:
 
 /home/joel/Programacion/C++/Trees/BST/bst.hpp:
+
+/usr/include/c++/12/ostream:
 
 /usr/include/c++/12/bits/basic_ios.tcc:
 
@@ -288,11 +290,15 @@ CMakeFiles/main.dir/main.cpp.o: /home/joel/Programacion/C++/Trees/main.cpp \
 
 /usr/include/c++/12/initializer_list:
 
-/usr/include/c++/12/cerrno:
+/home/joel/Programacion/C++/Trees/BST/node.hpp:
 
-/usr/include/x86_64-linux-gnu/bits/select.h:
+/usr/include/x86_64-linux-gnu/c++/12/bits/ctype_base.h:
 
-/usr/include/c++/12/bits/refwrap.h:
+/usr/include/c++/12/bits/stl_iterator_base_types.h:
+
+/usr/include/c++/12/bits/cxxabi_forced.h:
+
+/usr/include/c++/12/debug/debug.h:
 
 /usr/include/c++/12/compare:
 
@@ -350,10 +356,6 @@ CMakeFiles/main.dir/main.cpp.o: /home/joel/Programacion/C++/Trees/main.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/types/locale_t.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/wint_t.h:
-
-/usr/include/x86_64-linux-gnu/bits/floatn-common.h:
-
 /usr/include/c++/12/bits/ptr_traits.h:
 
 /usr/include/c++/12/numbers:
@@ -371,6 +373,10 @@ CMakeFiles/main.dir/main.cpp.o: /home/joel/Programacion/C++/Trees/main.cpp \
 /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h:
 
 /usr/include/c++/12/bits/exception.h:
+
+/usr/include/c++/12/bits/concept_check.h:
+
+/usr/include/x86_64-linux-gnu/c++/12/bits/c++config.h:
 
 /usr/include/x86_64-linux-gnu/bits/wordsize.h:
 
@@ -402,15 +408,19 @@ CMakeFiles/main.dir/main.cpp.o: /home/joel/Programacion/C++/Trees/main.cpp \
 
 /usr/include/x86_64-linux-gnu/c++/12/bits/os_defines.h:
 
-/usr/include/c++/12/bits/stl_pair.h:
-
-/usr/include/features.h:
-
 /usr/include/x86_64-linux-gnu/bits/long-double.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h:
 
+/usr/include/c++/12/bits/stl_pair.h:
+
+/usr/include/features.h:
+
 /usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
+
+/usr/include/c++/12/bits/uses_allocator.h:
+
+/usr/include/c++/12/bits/stl_iterator_base_funcs.h:
 
 /usr/include/c++/12/bits/move.h:
 
@@ -426,17 +436,13 @@ CMakeFiles/main.dir/main.cpp.o: /home/joel/Programacion/C++/Trees/main.cpp \
 
 /usr/include/c++/12/ext/numeric_traits.h:
 
-/home/joel/Programacion/C++/Trees/BST/node.hpp:
-
-/usr/include/x86_64-linux-gnu/c++/12/bits/ctype_base.h:
-
-/usr/include/c++/12/bits/stl_iterator_base_types.h:
-
-/usr/include/c++/12/bits/cxxabi_forced.h:
-
-/usr/include/c++/12/ostream:
-
 /usr/include/c++/12/bits/stl_construct.h:
+
+/usr/include/c++/12/cerrno:
+
+/usr/include/x86_64-linux-gnu/bits/select.h:
+
+/usr/include/c++/12/bits/refwrap.h:
 
 /usr/include/c++/12/ios:
 
@@ -466,15 +472,9 @@ CMakeFiles/main.dir/main.cpp.o: /home/joel/Programacion/C++/Trees/main.cpp \
 
 /usr/include/wchar.h:
 
-/usr/include/c++/12/bits/uses_allocator.h:
+/usr/include/x86_64-linux-gnu/bits/types/wint_t.h:
 
-/usr/include/c++/12/bits/stl_iterator_base_funcs.h:
-
-/usr/include/x86_64-linux-gnu/c++/12/bits/c++config.h:
-
-/usr/include/c++/12/bits/concept_check.h:
-
-/usr/include/c++/12/debug/debug.h:
+/usr/include/x86_64-linux-gnu/bits/floatn-common.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/12/include/stdint.h:
 
@@ -598,10 +598,10 @@ CMakeFiles/main.dir/main.cpp.o: /home/joel/Programacion/C++/Trees/main.cpp \
 
 /usr/include/c++/12/bits/new_allocator.h:
 
-/usr/include/c++/12/bits/invoke.h:
+/usr/include/c++/12/bits/stl_function.h:
 
 /usr/include/c++/12/bits/predefined_ops.h:
 
 /usr/include/c++/12/bits/functexcept.h:
 
-/usr/include/c++/12/bits/stl_function.h:
+/usr/include/c++/12/bits/invoke.h:

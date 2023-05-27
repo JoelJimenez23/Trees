@@ -9,4 +9,9 @@ struct NodeBT{
     explicit NodeBT(T value):data(value){
         left = right = nullptr;
     }
+    void killself(){
+        if(left != nullptr){left->killself();}
+        if(right != nullptr){right->killself();}
+        delete this;
+    }
 };
