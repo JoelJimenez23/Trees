@@ -14,8 +14,7 @@ CMakeFiles/main.dir/main.cpp.o: \
  /usr/include/c++/12/pstl/pstl_config.h \
  /usr/include/c++/12/ext/numeric_traits.h \
  /usr/include/c++/12/bits/cpp_type_traits.h \
- /usr/include/c++/12/ext/type_traits.h /usr/include/c++/12/iostream \
- /usr/include/c++/12/ostream /usr/include/c++/12/ios \
+ /usr/include/c++/12/ext/type_traits.h /usr/include/c++/12/ios \
  /usr/include/c++/12/iosfwd /usr/include/c++/12/bits/stringfwd.h \
  /usr/include/c++/12/bits/memoryfwd.h /usr/include/c++/12/bits/postypes.h \
  /usr/include/c++/12/cwchar /usr/include/wchar.h \
@@ -148,9 +147,9 @@ CMakeFiles/main.dir/main.cpp.o: \
  /usr/include/c++/12/bits/streambuf_iterator.h \
  /usr/include/x86_64-linux-gnu/c++/12/bits/ctype_inline.h \
  /usr/include/c++/12/bits/locale_facets.tcc \
- /usr/include/c++/12/bits/basic_ios.tcc \
- /usr/include/c++/12/bits/ostream.tcc /usr/include/c++/12/istream \
- /usr/include/c++/12/bits/istream.tcc \
+ /usr/include/c++/12/bits/basic_ios.tcc /usr/include/c++/12/iostream \
+ /usr/include/c++/12/ostream /usr/include/c++/12/bits/ostream.tcc \
+ /usr/include/c++/12/istream /usr/include/c++/12/bits/istream.tcc \
  /home/joel/Programacion/C++/Trees/BST/bst.hpp \
  /usr/include/c++/12/cstddef \
  /home/joel/Programacion/C++/Trees/BST/node.hpp /usr/include/c++/12/stack \
