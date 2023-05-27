@@ -3,7 +3,8 @@
 
 CMakeFiles/main.dir/main.cpp.o: /home/joel/Programacion/C++/Trees/main.cpp \
   /usr/include/stdc-predef.h \
-  /usr/include/c++/12/iostream \
+  /usr/include/c++/12/bit \
+  /usr/include/c++/12/type_traits \
   /usr/include/x86_64-linux-gnu/c++/12/bits/c++config.h \
   /usr/include/x86_64-linux-gnu/c++/12/bits/os_defines.h \
   /usr/include/features.h \
@@ -16,6 +17,10 @@ CMakeFiles/main.dir/main.cpp.o: /home/joel/Programacion/C++/Trees/main.cpp \
   /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
   /usr/include/x86_64-linux-gnu/c++/12/bits/cpu_defines.h \
   /usr/include/c++/12/pstl/pstl_config.h \
+  /usr/include/c++/12/ext/numeric_traits.h \
+  /usr/include/c++/12/bits/cpp_type_traits.h \
+  /usr/include/c++/12/ext/type_traits.h \
+  /usr/include/c++/12/iostream \
   /usr/include/c++/12/ostream \
   /usr/include/c++/12/ios \
   /usr/include/c++/12/iosfwd \
@@ -46,7 +51,6 @@ CMakeFiles/main.dir/main.cpp.o: /home/joel/Programacion/C++/Trees/main.cpp \
   /usr/include/c++/12/bits/hash_bytes.h \
   /usr/include/c++/12/new \
   /usr/include/c++/12/bits/move.h \
-  /usr/include/c++/12/type_traits \
   /usr/include/c++/12/bits/nested_exception.h \
   /usr/include/c++/12/bits/char_traits.h \
   /usr/include/c++/12/compare \
@@ -114,14 +118,11 @@ CMakeFiles/main.dir/main.cpp.o: /home/joel/Programacion/C++/Trees/main.cpp \
   /usr/include/x86_64-linux-gnu/c++/12/bits/c++allocator.h \
   /usr/include/c++/12/bits/new_allocator.h \
   /usr/include/c++/12/bits/functexcept.h \
-  /usr/include/c++/12/bits/cpp_type_traits.h \
   /usr/include/c++/12/bits/ostream_insert.h \
   /usr/include/c++/12/bits/cxxabi_forced.h \
   /usr/include/c++/12/bits/stl_iterator.h \
-  /usr/include/c++/12/ext/type_traits.h \
   /usr/include/c++/12/bits/stl_function.h \
   /usr/include/c++/12/backward/binders.h \
-  /usr/include/c++/12/ext/numeric_traits.h \
   /usr/include/c++/12/bits/stl_algobase.h \
   /usr/include/c++/12/bits/stl_pair.h \
   /usr/include/c++/12/bits/utility.h \
@@ -287,7 +288,11 @@ CMakeFiles/main.dir/main.cpp.o: /home/joel/Programacion/C++/Trees/main.cpp \
 
 /usr/include/c++/12/initializer_list:
 
-/usr/include/c++/12/debug/debug.h:
+/usr/include/c++/12/cerrno:
+
+/usr/include/x86_64-linux-gnu/bits/select.h:
+
+/usr/include/c++/12/bits/refwrap.h:
 
 /usr/include/c++/12/compare:
 
@@ -337,11 +342,41 @@ CMakeFiles/main.dir/main.cpp.o: /home/joel/Programacion/C++/Trees/main.cpp \
 
 /home/joel/Programacion/C++/Trees/main.cpp:
 
+/usr/include/asm-generic/errno-base.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/12/include/stddef.h:
+
+/usr/include/x86_64-linux-gnu/bits/wctype-wchar.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/locale_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/wint_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/floatn-common.h:
+
 /usr/include/c++/12/bits/ptr_traits.h:
 
 /usr/include/c++/12/numbers:
 
 /usr/include/x86_64-linux-gnu/bits/timesize.h:
+
+/usr/include/c++/12/bits/basic_string.h:
+
+/usr/include/c++/12/ext/type_traits.h:
+
+/usr/include/c++/12/bits/iterator_concepts.h:
+
+/usr/include/c++/12/bits/locale_classes.tcc:
+
+/usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h:
+
+/usr/include/c++/12/bits/exception.h:
+
+/usr/include/x86_64-linux-gnu/bits/wordsize.h:
+
+/usr/include/c++/12/bits/cpp_type_traits.h:
+
+/usr/include/c++/12/bits/allocator.h:
 
 /usr/include/c++/12/new:
 
@@ -353,10 +388,6 @@ CMakeFiles/main.dir/main.cpp.o: /home/joel/Programacion/C++/Trees/main.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:
 
-/usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
-
-/usr/include/c++/12/bits/stringfwd.h:
-
 /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h:
 
 /usr/include/x86_64-linux-gnu/bits/wchar.h:
@@ -365,29 +396,9 @@ CMakeFiles/main.dir/main.cpp.o: /home/joel/Programacion/C++/Trees/main.cpp \
 
 /usr/include/x86_64-linux-gnu/c++/12/bits/gthr.h:
 
-/usr/include/c++/12/bits/locale_classes.tcc:
+/usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
 
-/usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h:
-
-/usr/include/c++/12/bits/exception.h:
-
-/usr/include/x86_64-linux-gnu/bits/wctype-wchar.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/locale_t.h:
-
-/usr/include/asm-generic/errno-base.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/12/include/stddef.h:
-
-/usr/include/c++/12/bits/basic_string.h:
-
-/usr/include/c++/12/bits/iterator_concepts.h:
-
-/usr/include/c++/12/ext/type_traits.h:
-
-/usr/include/c++/12/bits/concept_check.h:
-
-/usr/include/x86_64-linux-gnu/c++/12/bits/c++config.h:
+/usr/include/c++/12/bits/stringfwd.h:
 
 /usr/include/x86_64-linux-gnu/c++/12/bits/os_defines.h:
 
@@ -399,25 +410,21 @@ CMakeFiles/main.dir/main.cpp.o: /home/joel/Programacion/C++/Trees/main.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h:
 
-/usr/include/c++/12/bits/uses_allocator.h:
-
-/usr/include/c++/12/bits/stl_iterator_base_funcs.h:
+/usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
 
 /usr/include/c++/12/bits/move.h:
 
 /usr/include/stdc-predef.h:
 
-/usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
-
-/usr/include/c++/12/cstdint:
-
-/usr/include/c++/12/clocale:
-
-/usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/12/include/stdarg.h:
+/usr/include/c++/12/bit:
 
 /usr/include/pthread.h:
+
+/usr/include/c++/12/bits/stl_stack.h:
+
+/usr/include/c++/12/pstl/pstl_config.h:
+
+/usr/include/c++/12/ext/numeric_traits.h:
 
 /home/joel/Programacion/C++/Trees/BST/node.hpp:
 
@@ -430,12 +437,6 @@ CMakeFiles/main.dir/main.cpp.o: /home/joel/Programacion/C++/Trees/main.cpp \
 /usr/include/c++/12/ostream:
 
 /usr/include/c++/12/bits/stl_construct.h:
-
-/usr/include/c++/12/cerrno:
-
-/usr/include/x86_64-linux-gnu/bits/select.h:
-
-/usr/include/c++/12/bits/refwrap.h:
 
 /usr/include/c++/12/ios:
 
@@ -451,15 +452,29 @@ CMakeFiles/main.dir/main.cpp.o: /home/joel/Programacion/C++/Trees/main.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
 
+/usr/include/c++/12/clocale:
+
+/usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/12/include/stdarg.h:
+
+/usr/include/c++/12/cstdint:
+
 /usr/include/c++/12/cwchar:
 
 /usr/include/x86_64-linux-gnu/c++/12/bits/ctype_inline.h:
 
 /usr/include/wchar.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/wint_t.h:
+/usr/include/c++/12/bits/uses_allocator.h:
 
-/usr/include/x86_64-linux-gnu/bits/floatn-common.h:
+/usr/include/c++/12/bits/stl_iterator_base_funcs.h:
+
+/usr/include/x86_64-linux-gnu/c++/12/bits/c++config.h:
+
+/usr/include/c++/12/bits/concept_check.h:
+
+/usr/include/c++/12/debug/debug.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/12/include/stdint.h:
 
@@ -575,12 +590,6 @@ CMakeFiles/main.dir/main.cpp.o: /home/joel/Programacion/C++/Trees/main.cpp \
 
 /usr/include/c++/12/bits/ostream_insert.h:
 
-/usr/include/c++/12/bits/allocator.h:
-
-/usr/include/x86_64-linux-gnu/bits/wordsize.h:
-
-/usr/include/c++/12/bits/cpp_type_traits.h:
-
 /usr/include/c++/12/bits/deque.tcc:
 
 /usr/include/c++/12/cstddef:
@@ -596,9 +605,3 @@ CMakeFiles/main.dir/main.cpp.o: /home/joel/Programacion/C++/Trees/main.cpp \
 /usr/include/c++/12/bits/functexcept.h:
 
 /usr/include/c++/12/bits/stl_function.h:
-
-/usr/include/c++/12/bits/stl_stack.h:
-
-/usr/include/c++/12/pstl/pstl_config.h:
-
-/usr/include/c++/12/ext/numeric_traits.h:

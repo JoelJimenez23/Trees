@@ -1,6 +1,6 @@
 CMakeFiles/main.dir/main.cpp.o: \
  /home/joel/Programacion/C++/Trees/main.cpp /usr/include/stdc-predef.h \
- /usr/include/c++/12/iostream \
+ /usr/include/c++/12/bit /usr/include/c++/12/type_traits \
  /usr/include/x86_64-linux-gnu/c++/12/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/12/bits/os_defines.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -11,9 +11,12 @@ CMakeFiles/main.dir/main.cpp.o: \
  /usr/include/x86_64-linux-gnu/gnu/stubs.h \
  /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
  /usr/include/x86_64-linux-gnu/c++/12/bits/cpu_defines.h \
- /usr/include/c++/12/pstl/pstl_config.h /usr/include/c++/12/ostream \
- /usr/include/c++/12/ios /usr/include/c++/12/iosfwd \
- /usr/include/c++/12/bits/stringfwd.h \
+ /usr/include/c++/12/pstl/pstl_config.h \
+ /usr/include/c++/12/ext/numeric_traits.h \
+ /usr/include/c++/12/bits/cpp_type_traits.h \
+ /usr/include/c++/12/ext/type_traits.h /usr/include/c++/12/iostream \
+ /usr/include/c++/12/ostream /usr/include/c++/12/ios \
+ /usr/include/c++/12/iosfwd /usr/include/c++/12/bits/stringfwd.h \
  /usr/include/c++/12/bits/memoryfwd.h /usr/include/c++/12/bits/postypes.h \
  /usr/include/c++/12/cwchar /usr/include/wchar.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
@@ -35,7 +38,6 @@ CMakeFiles/main.dir/main.cpp.o: \
  /usr/include/c++/12/bits/cxxabi_init_exception.h \
  /usr/include/c++/12/typeinfo /usr/include/c++/12/bits/hash_bytes.h \
  /usr/include/c++/12/new /usr/include/c++/12/bits/move.h \
- /usr/include/c++/12/type_traits \
  /usr/include/c++/12/bits/nested_exception.h \
  /usr/include/c++/12/bits/char_traits.h /usr/include/c++/12/compare \
  /usr/include/c++/12/concepts /usr/include/c++/12/bits/stl_construct.h \
@@ -92,14 +94,11 @@ CMakeFiles/main.dir/main.cpp.o: \
  /usr/include/x86_64-linux-gnu/c++/12/bits/c++allocator.h \
  /usr/include/c++/12/bits/new_allocator.h \
  /usr/include/c++/12/bits/functexcept.h \
- /usr/include/c++/12/bits/cpp_type_traits.h \
  /usr/include/c++/12/bits/ostream_insert.h \
  /usr/include/c++/12/bits/cxxabi_forced.h \
  /usr/include/c++/12/bits/stl_iterator.h \
- /usr/include/c++/12/ext/type_traits.h \
  /usr/include/c++/12/bits/stl_function.h \
  /usr/include/c++/12/backward/binders.h \
- /usr/include/c++/12/ext/numeric_traits.h \
  /usr/include/c++/12/bits/stl_algobase.h \
  /usr/include/c++/12/bits/stl_pair.h /usr/include/c++/12/bits/utility.h \
  /usr/include/c++/12/debug/debug.h \
