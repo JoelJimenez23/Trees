@@ -1,6 +1,8 @@
 #include "node.hpp"
+#include <bits/types/struct_tm.h>
 #include <cmath>
 #include <cstddef>
+#include <cstdio>
 #include <stdexcept>
 
 template <typename T>
@@ -9,10 +11,7 @@ class AVL{
 public:
     AVL():root(nullptr){}
     void insert(T value){
-        if(!root){root = new NodeBT<T>(value);}
-        else{
-            insert(root,value);
-        }
+        insert(root,value);
     }
     bool find(T value){
         if(!root){
@@ -23,8 +22,8 @@ public:
             return false;
         }
     }
-    int heigh(){
-        return heigh(root);
+    int height(){
+        return height(root);
     }
     T minValue(){
         if(root){
@@ -45,10 +44,29 @@ public:
         }
     }
     int size();
-    void remove();
+    void remove(T value){
+        if(root){
+            remove(root,value);
+        }
+        else {
+            throw std::invalid_argument("root is not initialized\n");
+        }
+    }
     void display(){
-        if(root){display(root);}
-        throw std::invalid_argument("root is not initialized\n");
+        if(root == nullptr){
+            throw std::invalid_argument("root is not initialized\n");
+        }
+        else{
+            display(root);
+        }
+    }
+    void displayPreOrder(){
+        if(root == nullptr){
+            throw std::invalid_argument("root is not initialized\n");
+        }
+        else{
+            displayPreOrder(root);
+        }
     }
     void clear(){
         if(root){
@@ -64,29 +82,56 @@ private:
         }
         else if(node->data < value){insert(node->right,value);}
         else if(node->data > value){insert(node->left,value);}        
-
         updateheight(node);
         balancear(node);
+
+    }
+    void remove(NodeBT<T>*& node,T value){
+        if(node == nullptr){return;}
+        else if(node->data < value){remove(node->right,value);}
+        else if(node->data > value){remove(node->left,value);}
+        else{
+            if(node->left == nullptr && node->right == nullptr){delete node; node = nullptr;}
+            else if(node->left == nullptr){
+                NodeBT<T>* tmp = node;
+                node = node->right;
+                delete tmp; 
+            }
+            else if(node->right == nullptr){
+                NodeBT<T>* tmp = node;
+                node = node->left;
+                delete tmp;
+            }
+            else{
+                T temp = maxValue(node->left)->data;
+                node->data = temp;
+                remove(node->left,temp);
+            }
+        }
+        if(node){
+            updateheight(node);
+            balancear(node);
+        }
     }
     NodeBT<T>* find(NodeBT<T>* node, T value){
         if(node == nullptr){
             return nullptr;
         }
+        if(node->data == value){
+            return node;
+        }
         else if(node->data < value){
             return find(node->right,value);
         }
-        else if(node->data > value){
+        else {
             return find(node->left,value);
-        }
-        else{
-            return node;
         }
     }
     int height(NodeBT<T>* node){
         if(node == nullptr){
             return -1;
         }
-        return std::max(heigh(node->left),heigh(node->right)) + 1;
+        return std::max(height(node->left),height(node->right)) + 1;
     }
     void updateheight(NodeBT<T>*& node){
         node->height = std::max(height(node->left),height(node->right)) + 1;
@@ -106,56 +151,58 @@ private:
     void display(NodeBT<T>* node){
         if(node == nullptr){return;}
         display(node->left);
-        std::cout<<node->data;
+        std::cout<<node->data<<" ";
         display(node->right);
+    }
+    void displayPreOrder(NodeBT<T>* node){
+        if(node == nullptr){return;}
+        std::cout<<node->data<<" ";
+        displayPreOrder(node->left);
+        displayPreOrder(node->right);
     }
     bool isBalanced(NodeBT<T>* node){
         if(node == nullptr){return true;}
 
-        int left_height = node->left->height;
-        int right_height = node->right->height;
-        int height_difference = std::abs(left_height - right_height);
-        
-        if(height_difference > 1){return false;}
+        int left = height(node->left);
+        int right = height(node->right);
+        int difference = std::abs(left - right);
+        if(difference > 1){return false;}
 
         return isBalanced(node->left) && isBalanced(node->right);
     }
 
-    void lrota(NodeBT<T>*& node){
-        NodeBT<T>* hijo_derecho = node->right;//hijo derecho de node
-        node->right = hijo_derecho->left;// hijo derecho de node es ahora el hijp izquierdo del hijo derecho
-        hijo_derecho->left = node;
-        node = hijo_derecho;//con esto se converva los enlaces con el padre de node
-    }
     void rrota(NodeBT<T>*& node){
         NodeBT<T>* hijo_izquierdo = node->left;
         node->left = hijo_izquierdo->right;
         hijo_izquierdo->right = node;
+        updateheight(node);
+        updateheight(hijo_izquierdo);
         node = hijo_izquierdo;
     }
-    void lr_rota(NodeBT<T>*& node){
-        lrota(node->left);
-        rrota(node);
-    }
-    void rr_rota(NodeBT<T>*& node){
-        rr_rota(node->right);
-        lrota(node);
+    void lrota(NodeBT<T>*& node){
+        NodeBT<T>* hijo_derecho = node->right;//hijo derecho de node
+        node->right = hijo_derecho->left;// hijo derecho de node es ahora el hijp izquierdo del hijo derecho
+        hijo_derecho->left = node;
+        updateheight(node);
+        updateheight(hijo_derecho);
+        node = hijo_derecho;//con esto se converva los enlaces con el padre de node
     }
     void balancear(NodeBT<T>*& node){
-        if(factorBalanceo(node)>=2){
-            if(factorBalanceo(node->left)<= -1){
-                lrota(node);
+        int hb = factorBalanceo(node);
+        if(hb > 1){
+            if(factorBalanceo(node->left)< 0){
+                lrota(node->left);
             }
-            rr_rota(node);
+            rrota(node);
         }
-        if(factorBalanceo(node)<= -2){
-            if(factorBalanceo(node->right)>=1){
-                rr_rota(node);
+        else if(hb < -1){
+            if(factorBalanceo(node->right) > 0){
+                rrota(node->right);
             }
-            lr_rota(node);
+            lrota(node);
         }
     }
     int factorBalanceo(NodeBT<T>* node){
-        return node->left->height - node->right->height; 
+        return height(node->left) - height(node->right);
     }
 };
