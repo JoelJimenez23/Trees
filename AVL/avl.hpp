@@ -1,4 +1,5 @@
 #include "node.hpp"
+#include <cmath>
 #include <cstddef>
 #include <stdexcept>
 
@@ -35,10 +36,20 @@ public:
         if(root){return maxValue(root)->data;}
         throw std::invalid_argument("root not initialized\n");
     }
-    bool isBalanced();
+    bool isBalanced(){
+        if(root){
+            return isBalanced(root);
+        }
+        else{
+            throw std::invalid_argument("root isnt initialized\n");
+        }
+    }
     int size();
     void remove();
-    void display();
+    void display(){
+        if(root){display(root);}
+        throw std::invalid_argument("root is not initialized\n");
+    }
     void clear(){
         if(root){
             root->killself();
@@ -47,7 +58,16 @@ public:
     }
     ~AVL(){clear();}
 private:
-    void insert(NodeBT<T>*& node,T value);
+    void insert(NodeBT<T>*& node,T value){
+        if(node == nullptr){
+            node = new NodeBT<T>(value);
+        }
+        else if(node->data < value){insert(node->right,value);}
+        else if(node->data > value){insert(node->left,value);}        
+
+        updateheight(node);
+        balancear(node);
+    }
     NodeBT<T>* find(NodeBT<T>* node, T value){
         if(node == nullptr){
             return nullptr;
@@ -88,6 +108,17 @@ private:
         display(node->left);
         std::cout<<node->data;
         display(node->right);
+    }
+    bool isBalanced(NodeBT<T>* node){
+        if(node == nullptr){return true;}
+
+        int left_height = node->left->height;
+        int right_height = node->right->height;
+        int height_difference = std::abs(left_height - right_height);
+        
+        if(height_difference > 1){return false;}
+
+        return isBalanced(node->left) && isBalanced(node->right);
     }
 
     void lrota(NodeBT<T>*& node){
