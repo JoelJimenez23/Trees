@@ -1,7 +1,7 @@
 #include <cstddef>
 #include <iostream>
 #include <stdexcept>
-#include "node.hpp"
+#include "iterator.hpp"
 #include <stack>
 
 
@@ -58,17 +58,13 @@ public:
         if(root){
             return successor(root,value)->data;
         }
-        else{
-            throw std::invalid_argument("root not initialzed\n");
-        }
+        throw std::invalid_argument("root not initialzed\n");
     }
     T predecessor(T value){
         if(root){
             return predecessor(root,value)->data;
         }
-        else{
-            throw std::invalid_argument("root not initialized\n");
-        }
+        throw std::invalid_argument("root not initialized\n");
     }
     void clear(){
         if(root){this->root->killself();}
@@ -114,9 +110,8 @@ private:
         else if(node->data > value){
             return find(node->left,value);
         }
-        else {
-            return nullptr;
-        }
+        return nullptr;
+       
     }
     int height(NodeBT<T>* node){
         if(node == nullptr){
@@ -193,9 +188,9 @@ private:
         }
         
     }
-    NodeBT<T>* predecessor(NodeBT<T>* root, T value){
+    NodeBT<T>* predecessor(NodeBT<T>* nodeRoot, T value){
         std::stack<NodeBT<T>*> nodos;
-        NodeBT<T>* nodo = root;
+        NodeBT<T>* nodo = nodeRoot;
         while(nodo != nullptr && nodo->data != value){
             if(nodo->data < value){
                 nodos.push(nodo);
