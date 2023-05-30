@@ -4,22 +4,62 @@
 #include "HEAP/heap.hpp"
 using namespace std;
 
-int main()
-{
-    int* array = new int[10];
-    // array = {4,1,3,2,16,9,10,14,8,7};  
-    array[0]  = 4;
-    array[1]  = 1;
-    array[2]  = 3;
-    array[3]  = 2;
-    array[4]  = 16;
-    array[5]  = 9;
-    array[6]  = 10;
-    array[7]  = 14;
-    array[8]  = 8;
-    array[9]  = 7;
-    
-    Heap<int>* heap = new Heap<int>(array,10, Heap<int>::MAX_HEAP);
-    heap->display();
-    return 0;
+void testMaxHeap() {
+    Heap<int>* heap = new Heap<int>(10, Heap<int>::MAX_HEAP);
+    heap->is_empty();
+    heap->size();
+    int array[8] = {23, 10, 49, 50, 13, 12, 9, 45};
+    heap->buildFromArray(array, 8);
+    heap->top();
+    heap->push(8);
+    heap->push(55);
+    heap->push(18);
+    heap->top();
+    heap->pop();
+    heap->pop();
+    heap->top();
+    vector<int> topk = heap->extractTheTopK(2);
+    topk[1];
+    heap->size();
+    delete heap;
 }
+
+void testMinHeap() {
+    Heap<int>* heap = new Heap<int>(10, Heap<int>::MIN_HEAP);
+    heap->is_empty();
+    heap->size();
+    int array[8] = {23, 10, 49, 50, 13, 12, 9, 45};
+    heap->buildFromArray(array, 8);
+    heap->top();
+    heap->push(8);
+    heap->push(55);
+    heap->push(18);
+    heap->top();
+    heap->pop();
+    heap->pop();
+    heap->top();
+    vector<int> topk = heap->extractTheTopK(2);
+    topk[1];
+    heap->size();
+    delete heap;
+}
+
+void testSortAsc() {
+    int array[8] = {23, 10, 49, 50, 13, 12, 9, 45};
+    Heap<int>::sortAsc(array, 8);
+    // No hay verificaciones de los elementos del array después de la ordenación ascendente
+}
+
+void testSortDesc() {
+    int array[8] = {23, 10, 49, 50, 13, 12, 9, 45};
+    Heap<int>::sortDesc(array, 8);
+    // No hay verificaciones de los elementos del array después de la ordenación descendente
+}
+
+int main(int argc, char const *argv[]) {
+    testMaxHeap();
+    testMinHeap();
+    testSortAsc();
+    testSortDesc();
+    return 0;
+}       

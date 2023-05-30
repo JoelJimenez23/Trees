@@ -1,5 +1,6 @@
 #include <array>
 #include <iostream>
+#include <stdexcept>
 #include <type_traits>
 #include <vector>
 using namespace std;
@@ -17,22 +18,58 @@ public:
     Heap(T* _elements,int _n,Type _type): elements(_elements),n(_n),type(_type),capacity(_n){
         buildHeap();
     }
-    Heap(int _capacity,Type _type):capacity(_capacity),type(_type){
+    Heap(int _capacity,Type _type):capacity(_capacity),n(0), type(_type){
         elements = new T[capacity];
     }
-    ~Heap();
-    void buildFromArray(T* elements, int n);
-    int size();
-    bool isEmpty();
-    void push(T value){
-        elements[++n] = value;
-        heapify_up(elements,value);
+    ~Heap(){delete [] elements;}
+    void buildFromArray(T* elements, int n){
+        this->elements = elements;
+        this->n = n;
+        buildHeap();
     }
-    T pop();
-    T top();
+    int size(){return n;}
+    bool is_empty(){
+        return n == 0;
+    }
+    void push(T value){
+        if(n == capacity){
+            capacity *= 2;
+            T* new_array = new T[capacity];
+            for(int i=0;i<n;i++){
+                new_array[i] = elements[i];
+            }
+            delete [] elements;
+            this->elements = new_array;
+        }
+        elements[n++] = value;
+        heapify_up(elements,n-1);
+    }
+    T pop(){
+        if(n == 0){
+            throw out_of_range("heap empty\n");
+        }
+        T root = elements[0];
+        elements[0] = elements[n-1];
+        --n;
+        heapify_down(elements,0);
+        return root;
+    }
+    T top(){
+        return elements[0];
+    }
     vector<T> extractTheTopK(int k);
-    static void sortAsc(T* arr,int n);
-    static void sortDesc(T* arr,int n);
+    static void sortAsc(T* arr,int n){
+        Heap heap(arr,n,MAX_HEAP);
+        for(int i=0;i<n;i++){
+            arr[i] = heap.pop();
+        }
+    }
+    static void sortDesc(T* arr,int n){
+        Heap heap(arr,n,MIN_HEAP);
+        for(int i=0;i<n;i++){
+            arr[i] = heap.pop();
+        }
+    }
     void display(){
         for(int i=0;i<capacity;i++){
             cout<<elements[i]<<" ";
