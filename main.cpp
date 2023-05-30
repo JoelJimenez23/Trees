@@ -1,37 +1,25 @@
 #include <bit>
 #include <ios>
 #include<iostream>
-#include "AVL/avl.hpp"
+#include "HEAP/heap.hpp"
 using namespace std;
 
 int main()
 {
-    AVL<int> *avl = new AVL<int>();
-
-    avl->insert(35);
-    avl->insert(30);
-    avl->insert(27);
-    avl->insert(11);
-    avl->insert(16);
-    avl->insert(100);
-    avl->insert(50);
-    avl->insert(91);
-    avl->insert(73);
-    avl->insert(5);
-    avl->displayPreOrder();
-    std::cout<<std::endl;
-    std::cout<<boolalpha<<avl->isBalanced()<<std::endl;
-    std::cout<<avl->height()<<std::endl;
-
-    avl->remove(30);
-    avl->remove(35);
-    avl->remove(100);
-
-    avl->displayPreOrder();
-    std::cout<<std::endl;
-    std::cout<<boolalpha<<avl->isBalanced()<<std::endl;
-    std::cout<<avl->height()<<std::endl;
-
-
+    int* array = new int[10];
+    // array = {4,1,3,2,16,9,10,14,8,7};  
+    array[0]  = 4;
+    array[1]  = 1;
+    array[2]  = 3;
+    array[3]  = 2;
+    array[4]  = 16;
+    array[5]  = 9;
+    array[6]  = 10;
+    array[7]  = 14;
+    array[8]  = 8;
+    array[9]  = 7;
+    
+    Heap<int>* heap = new Heap<int>(array,10, Heap<int>::MAX_HEAP);
+    heap->display();
     return 0;
 }

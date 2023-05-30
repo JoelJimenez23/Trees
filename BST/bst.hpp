@@ -144,18 +144,20 @@ private:
             if(node->right == nullptr && node->left == nullptr){
                 delete node;
             }
-            else if(node->right != nullptr){
-                node->data = node->right->data;
-                delete node->right;
+            else if(node->right == nullptr){
+                NodeBT<T> temp = node;
+                node = node->left;
+                delete temp;
             }
-            else if(node->left != nullptr){
-                node->data = node->left->data;
-                delete node->left;
+            else if(node->left == nullptr){
+                NodeBT<T> temp = node;
+                node = node->right;
+                delete node;
             }
             else{
                 NodeBT<T>* nodito = minValue(node->right);
                 node->data = nodito->data;
-                delete nodito;
+                remove(node->right,nodito->data);
             }
         }
         

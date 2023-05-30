@@ -192,71 +192,28 @@ CMakeFiles/main.dir/main.cpp.o: /home/joel/Programacion/C++/Trees/main.cpp \
   /usr/include/c++/12/bits/ostream.tcc \
   /usr/include/c++/12/istream \
   /usr/include/c++/12/bits/istream.tcc \
-  /home/joel/Programacion/C++/Trees/AVL/avl.hpp \
-  /home/joel/Programacion/C++/Trees/AVL/node.hpp \
-  /usr/include/c++/12/cmath \
-  /usr/include/math.h \
-  /usr/include/x86_64-linux-gnu/bits/math-vector.h \
-  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
-  /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h \
-  /usr/include/x86_64-linux-gnu/bits/fp-logb.h \
-  /usr/include/x86_64-linux-gnu/bits/fp-fast.h \
-  /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h \
-  /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
-  /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h \
-  /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
-  /usr/include/c++/12/bits/specfun.h \
-  /usr/include/c++/12/limits \
-  /usr/include/c++/12/tr1/gamma.tcc \
-  /usr/include/c++/12/tr1/special_function_util.h \
-  /usr/include/c++/12/tr1/bessel_function.tcc \
-  /usr/include/c++/12/tr1/beta_function.tcc \
-  /usr/include/c++/12/tr1/ell_integral.tcc \
-  /usr/include/c++/12/tr1/exp_integral.tcc \
-  /usr/include/c++/12/tr1/hypergeometric.tcc \
-  /usr/include/c++/12/tr1/legendre_function.tcc \
-  /usr/include/c++/12/tr1/modified_bessel_func.tcc \
-  /usr/include/c++/12/tr1/poly_hermite.tcc \
-  /usr/include/c++/12/tr1/poly_laguerre.tcc \
-  /usr/include/c++/12/tr1/riemann_zeta.tcc \
-  /usr/include/c++/12/cstddef
+  /home/joel/Programacion/C++/Trees/HEAP/heap.hpp \
+  /usr/include/c++/12/array \
+  /usr/include/c++/12/vector \
+  /usr/include/c++/12/bits/stl_uninitialized.h \
+  /usr/include/c++/12/bits/stl_vector.h \
+  /usr/include/c++/12/bits/stl_bvector.h \
+  /usr/include/c++/12/bits/vector.tcc
 
 
-/usr/include/c++/12/tr1/riemann_zeta.tcc:
+/usr/include/c++/12/bits/stl_bvector.h:
 
-/usr/include/c++/12/tr1/modified_bessel_func.tcc:
+/usr/include/c++/12/bits/stl_vector.h:
 
-/usr/include/c++/12/tr1/legendre_function.tcc:
+/usr/include/c++/12/bits/stl_uninitialized.h:
 
-/usr/include/c++/12/tr1/hypergeometric.tcc:
-
-/usr/include/c++/12/tr1/ell_integral.tcc:
-
-/usr/include/c++/12/tr1/bessel_function.tcc:
-
-/usr/include/c++/12/tr1/gamma.tcc:
-
-/usr/include/c++/12/limits:
-
-/usr/include/c++/12/bits/specfun.h:
-
-/usr/include/x86_64-linux-gnu/bits/iscanonical.h:
-
-/usr/include/x86_64-linux-gnu/bits/fp-fast.h:
-
-/usr/include/x86_64-linux-gnu/bits/flt-eval-method.h:
-
-/usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h:
-
-/usr/include/c++/12/tr1/poly_laguerre.tcc:
-
-/home/joel/Programacion/C++/Trees/AVL/node.hpp:
-
-/usr/include/c++/12/tr1/special_function_util.h:
+/usr/include/c++/12/array:
 
 /usr/include/c++/12/ostream:
 
 /usr/include/c++/12/bits/basic_ios.tcc:
+
+/usr/include/c++/12/vector:
 
 /usr/include/c++/12/bits/streambuf_iterator.h:
 
@@ -277,8 +234,6 @@ CMakeFiles/main.dir/main.cpp.o: /home/joel/Programacion/C++/Trees/main.cpp \
 /usr/include/c++/12/bits/basic_string.tcc:
 
 /usr/include/c++/12/bits/charconv.h:
-
-/usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/error_t.h:
 
@@ -307,8 +262,6 @@ CMakeFiles/main.dir/main.cpp.o: /home/joel/Programacion/C++/Trees/main.cpp \
 /usr/include/x86_64-linux-gnu/sys/types.h:
 
 /usr/include/x86_64-linux-gnu/bits/waitstatus.h:
-
-/home/joel/Programacion/C++/Trees/AVL/avl.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/waitflags.h:
 
@@ -372,8 +325,6 @@ CMakeFiles/main.dir/main.cpp.o: /home/joel/Programacion/C++/Trees/main.cpp \
 
 /usr/include/c++/12/bits/locale_classes.h:
 
-/usr/include/c++/12/tr1/poly_hermite.tcc:
-
 /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h:
 
 /usr/include/c++/12/bits/exception_ptr.h:
@@ -430,8 +381,6 @@ CMakeFiles/main.dir/main.cpp.o: /home/joel/Programacion/C++/Trees/main.cpp \
 
 /usr/include/c++/12/new:
 
-/usr/include/x86_64-linux-gnu/bits/fp-logb.h:
-
 /usr/include/c++/12/exception:
 
 /usr/include/c++/12/bits/std_abs.h:
@@ -446,8 +395,6 @@ CMakeFiles/main.dir/main.cpp.o: /home/joel/Programacion/C++/Trees/main.cpp \
 
 /usr/include/c++/12/type_traits:
 
-/usr/include/c++/12/tr1/beta_function.tcc:
-
 /usr/include/x86_64-linux-gnu/c++/12/bits/gthr.h:
 
 /usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
@@ -460,11 +407,7 @@ CMakeFiles/main.dir/main.cpp.o: /home/joel/Programacion/C++/Trees/main.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h:
 
-/usr/include/x86_64-linux-gnu/bits/math-vector.h:
-
 /usr/include/c++/12/bits/stl_pair.h:
-
-/usr/include/c++/12/cmath:
 
 /usr/include/features.h:
 
@@ -480,11 +423,11 @@ CMakeFiles/main.dir/main.cpp.o: /home/joel/Programacion/C++/Trees/main.cpp \
 
 /usr/include/pthread.h:
 
-/usr/include/math.h:
-
 /usr/include/c++/12/pstl/pstl_config.h:
 
 /usr/include/c++/12/ext/numeric_traits.h:
+
+/home/joel/Programacion/C++/Trees/HEAP/heap.hpp:
 
 /usr/include/c++/12/bits/stl_construct.h:
 
@@ -502,8 +445,6 @@ CMakeFiles/main.dir/main.cpp.o: /home/joel/Programacion/C++/Trees/main.cpp \
 
 /usr/include/c++/12/iosfwd:
 
-/usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h:
-
 /usr/include/c++/12/bits/memoryfwd.h:
 
 /usr/include/c++/12/bits/ios_base.h:
@@ -516,8 +457,6 @@ CMakeFiles/main.dir/main.cpp.o: /home/joel/Programacion/C++/Trees/main.cpp \
 
 /usr/lib/gcc/x86_64-linux-gnu/12/include/stdarg.h:
 
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:
-
 /usr/include/c++/12/cstdint:
 
 /usr/include/c++/12/cwchar:
@@ -529,8 +468,6 @@ CMakeFiles/main.dir/main.cpp.o: /home/joel/Programacion/C++/Trees/main.cpp \
 /usr/include/x86_64-linux-gnu/bits/types/wint_t.h:
 
 /usr/include/x86_64-linux-gnu/bits/floatn-common.h:
-
-/usr/include/c++/12/tr1/exp_integral.tcc:
 
 /usr/lib/gcc/x86_64-linux-gnu/12/include/stdint.h:
 
@@ -646,13 +583,13 @@ CMakeFiles/main.dir/main.cpp.o: /home/joel/Programacion/C++/Trees/main.cpp \
 
 /usr/include/c++/12/bits/ostream_insert.h:
 
-/usr/include/c++/12/cstddef:
-
 /usr/include/c++/12/concepts:
 
 /usr/include/c++/12/bits/new_allocator.h:
 
 /usr/include/c++/12/bits/stl_function.h:
+
+/usr/include/c++/12/bits/vector.tcc:
 
 /usr/include/c++/12/bits/predefined_ops.h:
 
