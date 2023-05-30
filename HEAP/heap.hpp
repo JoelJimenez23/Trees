@@ -15,15 +15,18 @@ private:
     int n;
     Type type;
 public:
-    Heap(T* _elements,int _n,Type _type): elements(_elements),n(_n),type(_type),capacity(_n){
+    Heap(T*& _elements,int _n,Type _type): elements(_elements),n(_n),type(_type),capacity(_n){
         buildHeap();
     }
     Heap(int _capacity,Type _type):capacity(_capacity),n(0), type(_type){
         elements = new T[capacity];
     }
     ~Heap(){delete [] elements;}
-    void buildFromArray(T* elements, int n){
-        this->elements = elements;
+    void buildFromArray(T* arr, int n){
+        elements = new T[n];
+        for (int i = 0; i < n; i++) {
+            elements[i] = arr[i];
+        }
         this->n = n;
         buildHeap();
     }
@@ -49,34 +52,47 @@ public:
             throw out_of_range("heap empty\n");
         }
         T root = elements[0];
-        elements[0] = elements[n-1];
-        --n;
+        elements[0] = elements[--n];
         heapify_down(elements,0);
         return root;
     }
     T top(){
         return elements[0];
     }
-    vector<T> extractTheTopK(int k);
-    static void sortAsc(T* arr,int n){
-        Heap heap(arr,n,MAX_HEAP);
-        for(int i=0;i<n;i++){
-            arr[i] = heap.pop();
+    vector<T> extractTheTopK(int k){
+        if(k < 0 || k > n){
+            throw out_of_range("index out of range\n");
         }
+        vector<T> result;
+        Heap<T> heap(*this);
+        for(int i=0;i<k;i++){
+            result.push_back(heap.pop());
+        }
+        return result;
     }
-    static void sortDesc(T* arr,int n){
-        Heap heap(arr,n,MIN_HEAP);
+
+    static void sortAsc(T*& arr,int n){
+        Heap heap(arr,n,MAX_HEAP);
+        T* new_array = new T[n];
         for(int i=0;i<n;i++){
-            arr[i] = heap.pop();
+            new_array[i] = heap.pop(); 
         }
+        arr = new_array;
+    }
+    static void sortDesc(T*& arr,int n){
+        Heap heap(arr,n,MIN_HEAP);
+        T* new_array = new T[n];
+        for(int i=0;i<n;i++){
+            new_array[i] = heap.pop(); 
+        }
+        arr = new_array;
     }
     void display(){
-        for(int i=0;i<capacity;i++){
+        for(int i=0;i<n;i++){
             cout<<elements[i]<<" ";
         }
         cout<<endl;
     }
-
 private:
     int Parent(int i){return (i - 1)/2;}
     int Left(int i){return 2 * i + 1;}
@@ -123,11 +139,10 @@ private:
             }
         }
         else if(type == MIN_HEAP){
-            if(elements[padre] < elements[i]){
+            if(elements[padre] > elements[i]){
                 swap(elements[padre],elements[i]);
                 heapify_up(elements,padre);
             }
         }
     }
-
 };

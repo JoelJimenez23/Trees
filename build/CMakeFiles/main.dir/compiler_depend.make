@@ -198,8 +198,12 @@ CMakeFiles/main.dir/main.cpp.o: /home/joel/Programacion/C++/Trees/main.cpp \
   /usr/include/c++/12/bits/stl_uninitialized.h \
   /usr/include/c++/12/bits/stl_vector.h \
   /usr/include/c++/12/bits/stl_bvector.h \
-  /usr/include/c++/12/bits/vector.tcc
+  /usr/include/c++/12/bits/vector.tcc \
+  /usr/include/c++/12/cassert \
+  /usr/include/assert.h
 
+
+/usr/include/assert.h:
 
 /usr/include/c++/12/bits/stl_bvector.h:
 
@@ -542,6 +546,8 @@ CMakeFiles/main.dir/main.cpp.o: /home/joel/Programacion/C++/Trees/main.cpp \
 /usr/include/c++/12/bits/range_access.h:
 
 /usr/include/time.h:
+
+/usr/include/c++/12/cassert:
 
 /usr/include/x86_64-linux-gnu/bits/time.h:
 
