@@ -1,17 +1,19 @@
 #include <ios>
 #include <iostream>
-#include "B/B.hpp"
+#include "B/agonia.hpp"
 using namespace std;
 
 
 
 
 int main(){
-    BTree<int>* b = new BTree<int>(2);
-    b->insert(1);
+    int M = 4;
+    B<int>* b = new B<int>(M);
+    b->insert(8);
+    b->insert(14);
     b->insert(2);
-    b->insert(3);
-    b->display();
+    b->insert(15);
 
+    b->display();
     return 0;
 }

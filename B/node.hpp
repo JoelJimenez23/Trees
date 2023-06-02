@@ -30,6 +30,45 @@ struct Node{
         std::cout<<std::endl;
     }
 
+    // void insert_root(T value){
+    //     keys[0] = value;
+    //     count++;
+    // }    
+    // void insertCaso1(T value){
+    //     int i = count - 1;
+    //     if(leaf){
+    //         while(i >= 0 && value < keys[i]){
+    //             keys[i + 1] = keys[i];
+    //             i--;
+    //         }
+    //         i++;
+    //         keys[i] = value;
+    //         count++;
+    //     }
+    //     else{
+    //         while(i >= 0 && value < keys[i]){
+    //             i--;
+    //         }
+    //         i++;
+    //         if(count == grado){
+
+    //         }
+    //         children[i]->insertCaso1(value);
+    //     }
+
+    // }
+    // void insert(T value){
+    //     if(grado == count){
+    //         Node<T>* newRoot = new Node<T>(grado);
+    //         newRoot->children[0] = this;
+
+    //         keys[0] = value;
+    //     }
+    //     else{
+    //         insertCaso1(value);
+    //     }
+    // }
+
 
     void killself();
 };

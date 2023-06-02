@@ -191,11 +191,10 @@ CMakeFiles/main.dir/main.cpp.o: /home/joel/Programacion/C++/Trees/main.cpp \
   /usr/include/c++/12/bits/ostream.tcc \
   /usr/include/c++/12/istream \
   /usr/include/c++/12/bits/istream.tcc \
-  /home/joel/Programacion/C++/Trees/B/B.hpp \
-  /home/joel/Programacion/C++/Trees/B/node.hpp
+  /home/joel/Programacion/C++/Trees/B/agonia.hpp
 
 
-/home/joel/Programacion/C++/Trees/B/B.hpp:
+/home/joel/Programacion/C++/Trees/B/agonia.hpp:
 
 /usr/include/c++/12/ostream:
 
@@ -432,8 +431,6 @@ CMakeFiles/main.dir/main.cpp.o: /home/joel/Programacion/C++/Trees/main.cpp \
 /usr/include/c++/12/bits/ios_base.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
-
-/home/joel/Programacion/C++/Trees/B/node.hpp:
 
 /usr/include/c++/12/cwchar:
 

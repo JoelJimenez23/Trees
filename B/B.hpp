@@ -23,18 +23,20 @@ public:
     }
     else{
       if(root->count == M){
+        std::cout<<"Paradise city\n";
+        Node<T>* newRoot = new Node<T>(M);
+        newRoot->children[0] = root;
+        root = newRoot;
         
+
       }
-      root->inner_insert(key);
+      insertNotFull(root,key);
     }
-
-
-
   }
+
   void remove(T key);//elimina un elemento
   int height();//altura del arbol. Considerar altura 0 para arbol vacio
   std::string toString(const std::string& sep);  // recorrido inorder
-
   T minKey();  // minimo valor de la llave en el arbol
   T maxKey();  // maximo valor de la llave en el arbol
   void clear(); // eliminar todos lo elementos del arbol
@@ -46,8 +48,36 @@ public:
     }
     std::cout<<"\n";
   }
-
-
+  void hijos(int index){
+    for(int i=0;i<M;i++){
+      std::cout<<root->children[index]->keys[i]<<" ";
+    }
+    std::cout<<"\n";
+  }
 private:
+  void insertNotFull(Node<T>*& node, T value){
+    int i = node->count -1;
+
+    if(node->leaf){
+      while(i >= 0 && node->keys[i] > value){
+        node->keys[i + 1] = node->keys[i];
+        i--;
+      }
+      i++;
+      node->keys[i] = value;
+      node->count++; 
+    }
+    else{
+      while(i >= 0 && value < node->keys[i]){
+          i--;
+      }
+      i++;
+      if(node->count == M){
+      }
+      insertNotFull(node->children[i],value);
+    }
+
+  }
+
 
 };
