@@ -151,4 +151,5 @@ CMakeFiles/main.dir/main.cpp.o: \
  /usr/include/c++/12/bits/basic_ios.tcc /usr/include/c++/12/iostream \
  /usr/include/c++/12/ostream /usr/include/c++/12/bits/ostream.tcc \
  /usr/include/c++/12/istream /usr/include/c++/12/bits/istream.tcc \
- /home/joel/Programacion/C++/Trees/B/agonia.hpp
+ /home/joel/Programacion/C++/Trees/B/agonia.hpp \
+ /home/joel/Programacion/C++/Trees/B/node.hpp /usr/include/c++/12/cstddef

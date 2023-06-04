@@ -191,7 +191,9 @@ CMakeFiles/main.dir/main.cpp.o: /home/joel/Programacion/C++/Trees/main.cpp \
   /usr/include/c++/12/bits/ostream.tcc \
   /usr/include/c++/12/istream \
   /usr/include/c++/12/bits/istream.tcc \
-  /home/joel/Programacion/C++/Trees/B/agonia.hpp
+  /home/joel/Programacion/C++/Trees/B/agonia.hpp \
+  /home/joel/Programacion/C++/Trees/B/node.hpp \
+  /usr/include/c++/12/cstddef
 
 
 /home/joel/Programacion/C++/Trees/B/agonia.hpp:
@@ -432,6 +434,8 @@ CMakeFiles/main.dir/main.cpp.o: /home/joel/Programacion/C++/Trees/main.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
 
+/home/joel/Programacion/C++/Trees/B/node.hpp:
+
 /usr/include/c++/12/cwchar:
 
 /usr/include/x86_64-linux-gnu/c++/12/bits/ctype_inline.h:
@@ -555,6 +559,8 @@ CMakeFiles/main.dir/main.cpp.o: /home/joel/Programacion/C++/Trees/main.cpp \
 /usr/include/x86_64-linux-gnu/bits/wordsize.h:
 
 /usr/include/c++/12/bits/cpp_type_traits.h:
+
+/usr/include/c++/12/cstddef:
 
 /usr/include/c++/12/concepts:
 

@@ -1,4 +1,6 @@
+#include <cstddef>
 #include <iostream>
+using namespace std;
 
 template<typename T>
 struct Node{
@@ -30,44 +32,46 @@ struct Node{
         std::cout<<std::endl;
     }
 
-    // void insert_root(T value){
-    //     keys[0] = value;
-    //     count++;
-    // }    
-    // void insertCaso1(T value){
-    //     int i = count - 1;
-    //     if(leaf){
-    //         while(i >= 0 && value < keys[i]){
-    //             keys[i + 1] = keys[i];
-    //             i--;
-    //         }
-    //         i++;
-    //         keys[i] = value;
-    //         count++;
-    //     }
-    //     else{
-    //         while(i >= 0 && value < keys[i]){
-    //             i--;
-    //         }
-    //         i++;
-    //         if(count == grado){
+    void splitChildren(int childToSplit){
+        Node<T>* origin = children[childToSplit];
+        Node<T>* sibling = new Node<T>(grado);
+        
+        int middle_index = grado /2;
 
-    //         }
-    //         children[i]->insertCaso1(value);
-    //     }
+        // repartir llaves
+        for(int i=middle_index + 1,j=0; i <grado;i++,j++){
+            sibling->keys[j] = origin->keys[i];
+        }
 
-    // }
-    // void insert(T value){
-    //     if(grado == count){
-    //         Node<T>* newRoot = new Node<T>(grado);
-    //         newRoot->children[0] = this;
+        // for(int i=middle_index,j=0; i <grado-1;i++,j++){
+        //     sibling->keys[j] = origin->keys[i];
+        // }
+        //asignar count a los hijos divididos
+        origin->count = middle_index;
+        sibling->count = grado - middle_index-1;
 
-    //         keys[0] = value;
-    //     }
-    //     else{
-    //         insertCaso1(value);
-    //     }
-    // }
+        //insertar en el padre provicional     OJO
+        int paren_index = count-1;
+        while(paren_index >= 0 && origin->keys[middle_index] < keys[paren_index]){
+            keys[paren_index + 1] = keys[paren_index];
+            paren_index--;
+        }
+        paren_index++;
+        keys[paren_index] = origin->keys[middle_index];
+        count++;
+        leaf = false;
+
+        //modificar children
+        int index_children = count;
+        while(index_children >= childToSplit + 1){
+            children[index_children  + 1] = children[index_children];
+            index_children--;
+        }
+        index_children++;
+        children[index_children] = sibling;
+
+
+    }
 
 
     void killself();
