@@ -47,7 +47,7 @@ struct Node{
         sibling->count = grado - middle_index-1;
 
         if(!origin->leaf){
-            for(int i=middle_index + 1,j=0; i <grado;i++,j++){
+            for(int i=middle_index + 1,j=0; i <grado+1;i++,j++){
                 sibling->children[j] = origin->children[i];
             }
         }
@@ -70,6 +70,7 @@ struct Node{
         }
         children[index_children + 1] = sibling;
 
+        sibling->leaf = origin->leaf;
 
     }
 

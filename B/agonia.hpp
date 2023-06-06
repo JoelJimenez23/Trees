@@ -59,14 +59,15 @@ public:
     void displayChildren(int index){
         if(root->children[index] != nullptr){
             for(int i=0;i<root->children[index]->count;i++){
-                std::cout<<root->children[index]->keys[i]<<" ";
+                std::cout<<root->children[index]->keys[i]<<"    ";
             }
+            std::cout<<"|";
         }
     }
     void displayChildrenChildren(int index1,int index2){
         if(root->children[index1]->children[index2] !=nullptr){
             for(int i=0;i<root->children[index1]->children[index2]->count;i++){
-                std::cout<<root->children[index1]->children[index2]->keys[i]<<"  ";
+                std::cout<<root->children[index1]->children[index2]->keys[i]<<" ";
             }
         }
         else {
