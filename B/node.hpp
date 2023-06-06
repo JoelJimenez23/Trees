@@ -42,22 +42,23 @@ struct Node{
         for(int i=middle_index + 1,j=0; i <grado;i++,j++){
             sibling->keys[j] = origin->keys[i];
         }
-
-        // for(int i=middle_index,j=0; i <grado-1;i++,j++){
-        //     sibling->keys[j] = origin->keys[i];
-        // }
-        //asignar count a los hijos divididos
+        
         origin->count = middle_index;
         sibling->count = grado - middle_index-1;
 
-        //insertar en el padre provicional     OJO
-        int paren_index = count-1;
-        while(paren_index >= 0 && origin->keys[middle_index] < keys[paren_index]){
-            keys[paren_index + 1] = keys[paren_index];
-            paren_index--;
+        if(!origin->leaf){
+            for(int i=middle_index + 1,j=0; i <grado;i++,j++){
+                sibling->children[j] = origin->children[i];
+            }
         }
-        paren_index++;
-        keys[paren_index] = origin->keys[middle_index];
+
+        //insertar en el padre provicional     OJO
+        int parent_index = count-1;
+        while(parent_index >= 0 && origin->keys[middle_index] < keys[parent_index]){
+            keys[parent_index + 1] = keys[parent_index];
+            parent_index--;
+        }
+        keys[parent_index + 1] = origin->keys[middle_index];
         count++;
         leaf = false;
 
@@ -67,8 +68,7 @@ struct Node{
             children[index_children  + 1] = children[index_children];
             index_children--;
         }
-        index_children++;
-        children[index_children] = sibling;
+        children[index_children + 1] = sibling;
 
 
     }

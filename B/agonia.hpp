@@ -33,8 +33,7 @@ public:
                 node->keys[index + 1] = node->keys[index];
                 index--;
             }
-            index++;
-            node->keys[index] = value;
+            node->keys[index + 1] = value;
             node->count++;
         }
         else{
@@ -63,6 +62,15 @@ public:
                 std::cout<<root->children[index]->keys[i]<<" ";
             }
         }
-
+    }
+    void displayChildrenChildren(int index1,int index2){
+        if(root->children[index1]->children[index2] !=nullptr){
+            for(int i=0;i<root->children[index1]->children[index2]->count;i++){
+                std::cout<<root->children[index1]->children[index2]->keys[i]<<"  ";
+            }
+        }
+        else {
+            std::cout<<"nullptr\n";
+        }
     }
 };

@@ -29,6 +29,7 @@ int main(){
     bcito->insert(17);
     bcito->insert(26);
     bcito->insert(28);
+    bcito->insert(10);
 
 
     cout<<"      ";
@@ -42,7 +43,8 @@ int main(){
     bcito->displayChildren(3);
     cout<<" | ";
     bcito->displayChildren(4);
-
+    cout<<endl;
+    bcito->displayChildrenChildren(1,1);
 
     return 0;
 }
