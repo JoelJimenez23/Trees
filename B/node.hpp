@@ -58,6 +58,9 @@ struct Node{
             keys[parent_index + 1] = keys[parent_index];
             parent_index--;
         }
+        if(count == grado){
+            
+        }
         keys[parent_index + 1] = origin->keys[middle_index];
         count++;
         leaf = false;
@@ -70,10 +73,35 @@ struct Node{
         }
         children[index_children + 1] = sibling;
 
-        sibling->leaf = origin->leaf;
+        sibling->leaf = origin->leaf;//en el caso de que no se declare los datos se quedarian en sibling y no a las hojas, en caso de que sibling no fuese hoja
+
 
     }
 
+
+    void insertNoFull(T value){
+        int index = count-1;
+        if(leaf == true){
+            while(index >= 0 && value < keys[index]){
+                keys[index + 1] = keys[index];
+                index--;
+            }
+            keys[index + 1] =value;
+            count++;
+        }
+        else{
+            while(index >= 0 && value < keys[index]){
+                index--;
+            }
+            index++;
+            if(children[index]->count == grado){
+                splitChildren(index);
+                if(value > keys[index]){index++;}
+            }
+            
+            insertNoFull(children[index],value);
+        }
+    }
 
     void killself();
 };
