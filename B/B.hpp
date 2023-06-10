@@ -1,83 +1,79 @@
 #include "node.hpp"
-#include <string>
-#include <iostream>
 
-template <typename T>
-class BTree {
-private:
-  Node<T>* root;
-  int M;  // grado u orden del arbol
-  int n; // total de elementos en el arbol 
+template <typename T,int grado>
+class Btree{
+    int n;
+    Node<T,grado> *root;
 
 public:
-  BTree(int _M) : root(nullptr), M(_M) {
-  }
-  bool search(T key){
-    return static_cast<bool>(root->search(key) != nullptr);
-  }
-  void insert(T key){
-    if(root == nullptr){
-      root = new Node<T>(M);
-      root->keys[0] = key;
-      root->count = 1;
+    Btree(){
+        root = new Node<T,grado>();
     }
-    else{
-      if(root->count == M){
-        std::cout<<"Paradise city\n";
-        Node<T>* newRoot = new Node<T>(M);
-        newRoot->children[0] = root;
-        root = newRoot;
-        
-
-      }
-      insertNotFull(root,key);
+    bool search(T key){
+        return static_cast<bool>(root->search(key) != nullptr);
     }
-  }
-
-  void remove(T key);//elimina un elemento
-  int height();//altura del arbol. Considerar altura 0 para arbol vacio
-  std::string toString(const std::string& sep);  // recorrido inorder
-  T minKey();  // minimo valor de la llave en el arbol
-  T maxKey();  // maximo valor de la llave en el arbol
-  void clear(); // eliminar todos lo elementos del arbol
-  int size(); // retorna el total de elementos insertados  
-  ~BTree();     // liberar memoria
-  void display(){
-    for(int i=0;i<M;i++){
-      std::cout<<root->keys[i]<<" ";
+    void insert(T key){
+        if(root == nullptr){
+            root = new Node<T,grado>();
+            root->keys[0] = key;
+            root->count++;
+        }
+        else{
+            if(root->count == grado){
+                cout<<"key "<<key<<endl;
+                Node<T,grado>* newRoot = new Node<T,grado>();
+                newRoot->children[0] = root;
+                root = newRoot;
+                root->splitChildren(0);
+            }
+            root->insertNotFull(key);
+        }
+        n++;
     }
-    std::cout<<"\n";
-  }
-  void hijos(int index){
-    for(int i=0;i<M;i++){
-      std::cout<<root->children[index]->keys[i]<<" ";
+    void remove(T key){
+        root->removeNotFull(key);
+        n--;
     }
-    std::cout<<"\n";
-  }
-private:
-  void insertNotFull(Node<T>*& node, T value){
-    int i = node->count -1;
+    int height(){return root->height();}
+    std::string toString(const  string& sep);
+    T minKey(){return root->minKey();}
+    T maxKey(){return root->maxKey();}
+    void clear();
+    int size(){return n;}
+    ~Btree();
 
-    if(node->leaf){
-      while(i >= 0 && node->keys[i] > value){
-        node->keys[i + 1] = node->keys[i];
-        i--;
-      }
-      i++;
-      node->keys[i] = value;
-      node->count++; 
+    void display(){
+        for(int i=0;i<root->count;i++){
+            std::cout<<root->keys[i]<<" ";
+        }
+        std::cout<<"\n";
     }
-    else{
-      while(i >= 0 && value < node->keys[i]){
-          i--;
-      }
-      i++;
-      if(node->count == M){
-      }
-      insertNotFull(node->children[i],value);
+    void displayChildren(int index){
+        if(root->children[index] != nullptr){
+            for(int i=0;i<root->children[index]->count;i++){
+                std::cout<<root->children[index]->keys[i]<<"    ";
+            }
+            std::cout<<"|";
+        }
+        else{
+            cout<<"nullptr\n";
+        }
     }
-
-  }
-
-
+    void displayChildrenChildren(int index1,int index2){
+        if(root->children[index1]->children[index2] !=nullptr){
+            for(int i=0;i<root->children[index1]->children[index2]->count;i++){
+                std::cout<<root->children[index1]->children[index2]->keys[i]<<" ";
+            }
+            std::cout<<"|";
+        }
+        else {
+            std::cout<<"nullptr\n";
+        }
+    }
+    T succesor(T key){
+        return root->successor(key);
+    }
+    T predecessor(T key){
+        return root->predecessor(key);
+    }
 };
