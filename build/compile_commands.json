@@ -1,8 +1,0 @@
-[
-{
-  "directory": "/home/joel/Programacion/C++/Trees/build",
-  "command": "/usr/bin/c++   -std=gnu++20 -o CMakeFiles/main.dir/main.cpp.o -c /home/joel/Programacion/C++/Trees/main.cpp",
-  "file": "/home/joel/Programacion/C++/Trees/main.cpp",
-  "output": "CMakeFiles/main.dir/main.cpp.o"
-}
-]
