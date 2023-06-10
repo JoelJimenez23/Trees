@@ -1,3 +1,0 @@
-/home/joel/Programacion/C++/Trees/CMakeFiles/MyExecutable.dir
-/home/joel/Programacion/C++/Trees/CMakeFiles/edit_cache.dir
-/home/joel/Programacion/C++/Trees/CMakeFiles/rebuild_cache.dir
