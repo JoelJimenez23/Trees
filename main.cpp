@@ -27,6 +27,10 @@ int main(){
 
     cout<<endl<<endl;
 
+    //prueba tostring
+    string treeString = bcito->toString(", ");
+    cout << treeString << std::endl;
+
     bcito->remove(100);
 
 

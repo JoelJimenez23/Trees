@@ -35,7 +35,14 @@ public:
         n--;
     }
     int height(){return root->height();}
-    std::string toString(const  string& sep);
+    std::string toString(const  string& sep){
+        std::string result;
+        if (root != nullptr) {
+            result = root->toString(sep);
+        }
+        return result;
+
+    }
     T minKey(){return root->minKey();}
     T maxKey(){return root->maxKey();}
     void clear();
@@ -76,4 +83,5 @@ public:
     T predecessor(T key){
         return root->predecessor(key);
     }
+
 };

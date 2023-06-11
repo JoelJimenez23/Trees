@@ -227,4 +227,22 @@ struct Node{
         return nodito->keys[nodito->count -1];
     }
 
+    string toString(const std::string& sep) {
+        std::string result;
+        bool isLeaf = leaf;
+
+        for (int i = 0; i < count; i++) {
+            if (!isLeaf) {
+                result += children[i]->toString(sep);
+            }
+            result += std::to_string(keys[i]) + sep;
+        }
+
+        if (!isLeaf) {
+            result += children[count]->toString(sep);
+        }
+
+        return result;
+    }
+
 };
