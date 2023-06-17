@@ -1,3 +1,0 @@
-/home/joel/programacion/repositorios/Trees/build/CMakeFiles/main.dir
-/home/joel/programacion/repositorios/Trees/build/CMakeFiles/edit_cache.dir
-/home/joel/programacion/repositorios/Trees/build/CMakeFiles/rebuild_cache.dir
